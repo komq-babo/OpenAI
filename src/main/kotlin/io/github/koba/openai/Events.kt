@@ -27,7 +27,7 @@ class Events: Listener {
             Bukkit.broadcastMessage("<${event.player.name}> ${event.message}")
             val service = OpenAiService(getInstance().config.getString("token"))
             val completionRequest = CompletionRequest.builder()
-                .prompt(event.message.substring(prefixLength + 1)) //TODO
+                .prompt(event.message.substring(prefixLength + 1))
                 .model("text-davinci-003")
                 .echo(true)
                 .build()
